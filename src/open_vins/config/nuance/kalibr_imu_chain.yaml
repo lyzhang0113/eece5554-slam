@@ -1,0 +1,20 @@
+%YAML:1.0 # need to specify the file type at the top!
+
+
+# VN-100 series converted from datasheet, guess on bias random walk
+# https://github.com/ethz-asl/kalibr/files/1116702/VN100_Specification.pdf
+
+imu0:
+  T_i_b:
+    - [1.0, 0.0, 0.0, 0.0]
+    - [0.0, 1.0, 0.0, 0.0]
+    - [0.0, 0.0, 1.0, 0.0]
+    - [0.0, 0.0, 0.0, 1.0]
+  accelerometer_noise_density: 0.0137 # 0.14 mg/√Hz * 10
+  accelerometer_random_walk: 0.00039 # < 0.04 mg
+  gyroscope_noise_density: 0.6e-4 # 0.0035 °/s √Hzs 
+  gyroscope_random_walk: 0.48e-4 #< 10 °/hr
+  model: calibrated
+  rostopic: /imu/imu
+  time_offset: 0.0
+  update_rate: 100.0 #Hz

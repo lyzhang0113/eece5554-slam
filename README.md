@@ -29,7 +29,7 @@ Since the configuration file for the EurocMav dataset has already been created, 
 ```
 roscore # term 0
 source devel/setup.bash # term 1
-roslaunch ov_msckf subscribe.launch config:=euroc_mav
+roslaunch ov_msckf subscribe.launch config:="euroc_mav"
 ```
 
 In another two terminals we can run the following. For RVIZ, one can open the `ov_msckf/launch/display.rviz` configuration file. You should see the system publishing features and a state estimate.
@@ -41,5 +41,16 @@ rosbag play V1_01_easy.bag # term 3
 ```
 
 ## Dataset
-NUANCE: To be updated
+
+### EuRoC
+
+```
+roslaunch ov_msckf eece5554.launch config:="euroc_mav" dataset:="V1_01_easy" bag:="<path to bag>"
+```
+
+### NUANCE
+```
+roslaunch ov_msckf nuance.launch bag:="<path to bag>"
+```
+
 
